@@ -1,59 +1,59 @@
 // Declare variables.
-const bookData = document.getElementById("data");
-const submit = document.getElementById("submit");
-const title = document.getElementById("title");
-const anchor = document.getElementById("anchor");
+const bookData = document.getElementById('data');
+const submit = document.getElementById('submit');
+const title = document.getElementById('title');
+const anchor = document.getElementById('anchor');
 
-document.addEventListener("DOMContentLoaded", () => {
-  let str = "";
+document.addEventListener('DOMContentLoaded', () => {
+  let str = '';
+  let bookArr = [];
 
   const showData = () => {
-    if (localStorage.getItem("book") === null) {
-      let bookArr = [];
-      localStorage.setItem("book", JSON.stringify(bookArr));
+    if (localStorage.getItem('book') === null) {
+      localStorage.setItem('book', JSON.stringify(bookArr));
     } else {
-      let bookArrStr = localStorage.getItem("book");
+      const bookArrStr = localStorage.getItem('book');
       bookArr = JSON.parse(bookArrStr);
     }
     bookArr.map((data, index) => {
-      console.log(data);
       str += `
               <p>${data[0]}</p>
               <p>${data[1]}</p>
               <button onclick='remove(${index})'>Remove</button>
               <hr>
           `;
+      return str;
     });
     bookData.innerHTML = str;
   };
 
-  submit.addEventListener("click", (e) => {
+  submit.addEventListener('click', (e) => {
     e.preventDefault();
-    let bookTitle = title.value;
-    let bookAnchor = anchor.value;
-    if (localStorage.getItem("book") === null) {
-      let bookArr = [];
+    const bookTitle = title.value;
+    const bookAnchor = anchor.value;
+    if (localStorage.getItem('book') === null) {
+      const bookArr = [];
       bookArr.push([bookTitle, bookAnchor]);
-      localStorage.setItem("book", JSON.stringify(bookArr));
+      localStorage.setItem('book', JSON.stringify(bookArr));
     } else {
-      let bookArrStr = localStorage.getItem("book");
+      const bookArrStr = localStorage.getItem('book');
       bookArr = JSON.parse(bookArrStr);
       bookArr.push([bookTitle, bookAnchor]);
-      localStorage.setItem("book", JSON.stringify(bookArr));
+      localStorage.setItem('book', JSON.stringify(bookArr));
     }
-    title.value = "";
-    anchor.value = "";
-    str = "";
+    title.value = '';
+    anchor.value = '';
+    str = '';
     bookData.innerHTML = str;
     showData();
   });
 
   remove = (id) => {
-    let bookArrStr = localStorage.getItem("book");
+    const bookArrStr = localStorage.getItem('book');
     bookArr = JSON.parse(bookArrStr);
     bookArr.splice(id, 1);
-    localStorage.setItem("book", JSON.stringify(bookArr));
-    str = "";
+    localStorage.setItem('book', JSON.stringify(bookArr));
+    str = '';
     bookData.innerHTML = str;
     showData();
   };
