@@ -17,11 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     bookArr.map((data, index) => {
       str += `
-              <p>${data[0]}</p>
-              <p>${data[1]}</p>
+      <div class = 'points'>
+              <p>"${data[0]}" by ${data[1]}</p>
               <button onclick='remove(${index})'>Remove</button>
-              <hr>
+              </div>
           `;
+          console.log(data.length);
+
       return str;
     });
     bookData.innerHTML = str;
