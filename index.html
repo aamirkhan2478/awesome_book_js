@@ -9,14 +9,41 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Awesome Book</h1>
-    <div id="data"></div>
-    <hr />
-    <h2>Add a New Book</h2>
-    <form class="form">
-      <input type="text" placeholder="Title" id="title" />
-      <input type="text" placeholder="Author" id="author" />
-      <button id="submit" type="button">Add</button>
-    </form>
+    <header>
+      <h4>Awesome Books</h4>
+      <nav>
+        <ul class="list-group">
+          <li>List</li>
+          <li>Add New</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+    <section class="list">
+      <h1>All Awesome Books</h1>
+      <div id="data"></div>
+    </section>
+    <section class='add-book'>
+      <h1>Add a New Book</h1>
+      <form class="form">
+        <input type="text" placeholder="Title" id="title" />
+        <input type="text" placeholder="Author" id="author" />
+        <button id="submit" type="button">Add</button>
+      </form>
+    </section>
+    <section class="contact">
+      <h1>Contact Information</h1>
+      <p>Do have any questions or you just want to say "Hello"?</p>
+      <caption>You can reach out to us!</caption>
+      <ul>
+        <li>Our email mail@gmail.com</li>
+        <li>Our phone no. 05463437453</li>
+        <li>Our address: xyz</li>
+      </ul>
+    </section>
+
+    <footer>
+      Copyright &copy; Awesome Books
+    </footer>
   </body>
 </html>

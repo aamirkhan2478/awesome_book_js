@@ -1,9 +1,53 @@
 body {
-  display: flex;
-  flex-direction: column;
   margin: 0;
   padding: 0;
+}
+
+/*======================================= 
+                  Navbar 
+=========================================*/
+header {
+  display: flex;
+  border: 1px solid black;
+  margin: 5px 20px 0 20px;
+  justify-content: space-between;
   align-items: center;
+}
+
+header h4 {
+  margin-left: 20px;
+}
+
+.list-group {
+  list-style: none;
+  display: flex;
+  margin-right: 20px;
+  gap: 20px;
+}
+
+.list-group li {
+  cursor: pointer;
+  border-right: 1px solid black;
+  padding-right: 20px;
+}
+
+.list-group li:first-child {
+  color: blue;
+}
+
+.list-group li:last-child {
+  border-right: 0;
+}
+
+/*======================================= 
+                  List Books 
+=========================================*/
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 485px;
 }
 
 #data {
@@ -28,6 +72,16 @@ body {
   font-weight: 800;
 }
 
+/*======================================= 
+                  Add Books 
+=========================================*/
+.add-book {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -50,10 +104,24 @@ body {
   font-weight: 800;
 }
 
-hr {
-  width: 10%;
-  margin-top: 50px;
+/*======================================= 
+                  Contact 
+=========================================*/
+.contact{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*======================================= 
+                  Footer 
+=========================================*/
+footer {
   border: 1px solid black;
-  background-color: black;
-  border-radius: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin: 5px 20px 0 20px;
 }
