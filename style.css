@@ -72,7 +72,7 @@ header h4 {
   font-weight: 800;
 }
 
-.hide-list{
+.hide-list {
   display: none;
 }
 
@@ -109,21 +109,25 @@ header h4 {
   font-weight: 800;
 }
 
-.show-addbook{
+.show-addbook {
   display: flex;
 }
 
-#msg{
+#msg {
   margin-top: -40px;
 }
 
-.remove-msg{
+.para {
   display: none;
+}
+
+.show-msg {
+  display: block;
 }
 /*======================================= 
                   Contact 
 =========================================*/
-.contact{
+.contact {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -131,11 +135,9 @@ header h4 {
   height: 485px;
 }
 
-.show-contact{
+.show-contact {
   display: flex;
 }
-
-
 
 /*======================================= 
                   Footer 
@@ -143,8 +145,8 @@ header h4 {
 footer {
   border: 1px solid black;
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 60px;
   margin: 5px 20px 0 20px;
+  padding-left: 10px;
 }
