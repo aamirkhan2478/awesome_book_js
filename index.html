@@ -13,25 +13,26 @@
       <h4>Awesome Books</h4>
       <nav>
         <ul class="list-group">
-          <li>List</li>
-          <li>Add New</li>
-          <li>Contact</li>
+          <li id="items">List</li>
+          <li id="add">Add New</li>
+          <li id="contact">Contact</li>
         </ul>
       </nav>
     </header>
-    <section class="list">
+    <section class="list" id="listed">
       <h1>All Awesome Books</h1>
       <div id="data"></div>
     </section>
-    <section class='add-book'>
+    <section class='add-book' id="Added">
       <h1>Add a New Book</h1>
       <form class="form">
         <input type="text" placeholder="Title" id="title" />
         <input type="text" placeholder="Author" id="author" />
         <button id="submit" type="button">Add</button>
+          <p id="msg" class="para"></p>
       </form>
     </section>
-    <section class="contact">
+    <section class="contact" id="contacted">
       <h1>Contact Information</h1>
       <p>Do have any questions or you just want to say "Hello"?</p>
       <caption>You can reach out to us!</caption>

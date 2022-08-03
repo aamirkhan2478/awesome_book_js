@@ -47,7 +47,7 @@ header h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 485px;
+  height: 100%;
 }
 
 #data {
@@ -72,6 +72,10 @@ header h4 {
   font-weight: 800;
 }
 
+.hide-list{
+  display: none;
+}
+
 /*======================================= 
                   Add Books 
 =========================================*/
@@ -80,6 +84,7 @@ header h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 485px;
 }
 
 .form {
@@ -104,6 +109,17 @@ header h4 {
   font-weight: 800;
 }
 
+.show-addbook{
+  display: flex;
+}
+
+#msg{
+  margin-top: -40px;
+}
+
+.remove-msg{
+  display: none;
+}
 /*======================================= 
                   Contact 
 =========================================*/
@@ -112,7 +128,14 @@ header h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 485px;
 }
+
+.show-contact{
+  display: flex;
+}
+
+
 
 /*======================================= 
                   Footer 
