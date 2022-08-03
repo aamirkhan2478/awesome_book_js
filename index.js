@@ -7,7 +7,6 @@ const item = document.getElementById("items");
 const bookAdd = document.getElementById("add");
 const contact = document.getElementById("contact");
 const addBook = document.getElementById("Added");
-const listedBook = document.getElementById("listed");
 const contactedBook = document.getElementById("contacted");
 const message = document.getElementById("msg");
 
