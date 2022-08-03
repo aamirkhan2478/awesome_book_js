@@ -3,6 +3,12 @@ const bookData = document.getElementById("data");
 const submit = document.getElementById("submit");
 const title = document.getElementById("title");
 const author = document.getElementById("author");
+const item = document.getElementById("items");
+const bookAdd = document.getElementById("add");
+const contact = document.getElementById("contact");
+const addBook = document.getElementById("Added");
+const contactedBook = document.getElementById("contacted");
+const message = document.getElementById("msg");
 
 document.addEventListener("DOMContentLoaded", () => {
   // Declare global variables
@@ -57,10 +63,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Check if title and author field is empty or not
       if (title.value === "") {
-        alert("Please enter a book title");
+        message.classList.add("show-msg");
+        message.style.color = "red";
+        title.style.border = "1px solid red";
+        author.style.border = "3px solid black";
+        message.innerHTML = `Please enter a book title`;
       } else if (author.value === "") {
-        alert("Please enter a book author");
+        message.classList.add("show-msg");
+        message.style.color = "red";
+        author.style.border = "1px solid red";
+        title.style.border = "3px solid black";
+        message.innerHTML = `Please enter a book author`;
       } else {
+        author.style.border = "3px solid black";
+        title.style.border = "3px solid black";
         if (localStorage.getItem("book") === null) {
           bookArr.push(book);
           localStorage.setItem("book", JSON.stringify(bookArr));
@@ -76,6 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
         bookData.innerHTML = str;
         this.showBook();
       }
+      setTimeout(() => {
+        message.classList.remove("show-msg");
+      }, 2500);
     }
 
     // Remove the book data by id
@@ -87,6 +106,36 @@ document.addEventListener("DOMContentLoaded", () => {
       str = "";
       bookData.innerHTML = str;
       this.showBook();
+    }
+
+    // Show only the book lists section
+    bookList() {
+      listed.classList.remove("hide-list");
+      addBook.classList.remove("show-addbook");
+      contactedBook.classList.remove("show-contact");
+      bookAdd.style.color = "black";
+      item.style.color = "blue";
+      contact.style.color = "black";
+    }
+
+    // Show only the Add book section
+    bookAdd() {
+      listed.classList.add("hide-list");
+      addBook.classList.add("show-addbook");
+      contactedBook.classList.remove("show-contact");
+      bookAdd.style.color = "blue";
+      item.style.color = "black";
+      contact.style.color = "black";
+    }
+
+    // Show only the contact section
+    contactAdd() {
+      listed.classList.add("hide-list");
+      addBook.classList.remove("show-addbook");
+      contactedBook.classList.add("show-contact");
+      bookAdd.style.color = "black";
+      item.style.color = "black";
+      contact.style.color = "blue";
     }
   }
 
@@ -100,6 +149,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const book = new Book();
     book.removeBook(id);
   };
+
+  item.addEventListener("click", () => {
+    const book = new Book();
+    book.bookList();
+  });
+
+  bookAdd.addEventListener("click", () => {
+    const book = new Book();
+    book.bookAdd();
+  });
+
+  contact.addEventListener("click", () => {
+    const book = new Book();
+    book.contactAdd();
+  });
 
   const book = new Book();
   book.showBook();
